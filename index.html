@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="calculadora_group">
+        <header>
+            <h1 class="titulo">Calculadora Saory</span></h1>
+        </header>
+        <div class="bloque_1">
+            <p>Primer número</p>
+            <input type="number" id="primer_numero">
+        </div>
+
+        <div class="bloque_2">
+            <p>Segundo número</p>
+            <input type="number" id="segundo_numero">
+        </div>
+
+        <div>
+            <button onclick="suma()">+</button>
+            <button onclick="resta()">-</button>
+            <button onclick="multiplicacion()">x</button>
+            <button onclick="dividir()">/</button>
+            <button onclick="raiz()">raiz</button>
+            <button onclick="potencia()">potencia</button>
+            <button onclick="diametro()">diametro</button>
+            <button onclick="random()">random</button>
+            <button onclick="borrarTodo()">Borrar Todo</button>
+        </div>
+        <h2 id="texto_resultado"></h2>
+    </div>
+
+    <script>
+        function obtenerValores() {
+            let numero1 = parseFloat(document.getElementById("primer_numero").value) || 0;
+            let numero2 = parseFloat(document.getElementById("segundo_numero").value) || 0;
+            return [numero1, numero2];
+        }
+
+        function mostrarResultado(resultado) {
+            let elementoTexto = document.getElementById("texto_resultado");
+            elementoTexto.textContent = resultado;
+        }
+
+        function borrarTodo() {
+            document.getElementById("primer_numero").value = "";
+            document.getElementById("segundo_numero").value = "";
+            document.getElementById("texto_resultado").textContent = "";
+        }
+
+        
+function sumar(numero_1, numero_2){
+    resultado = +numero_1 + +numero_2;
+    return resultado;
+}
+
+function suma(){
+    let elemento_numero1 = document.getElementById("primer_numero");
+    let elemento_numero2 = document.getElementById("segundo_numero");
+    let elemento_texto = document.getElementById("texto_resultado");
+    let elemento_suma = sumar(elemento_numero1.value, elemento_numero2.value);
+
+    elemento_texto.textContent = elemento_suma;
+    }
+
+    function restar(numero_1, numero_2){
+    resultado = +numero_1 - +numero_2;
+    return resultado;
+}
+
+function resta(){
+    let elemento_numero1 = document.getElementById("primer_numero");
+    let elemento_numero2 = document.getElementById("segundo_numero");
+    let elemento_texto = document.getElementById("texto_resultado");
+    let elemento_resta = restar(elemento_numero1.value, elemento_numero2.value);
+
+    elemento_texto.textContent = elemento_resta;
+    }
+function multiplicar(numero_1, numero_2){
+    resultado = +numero_1 * +numero_2;
+    return resultado
+}
+function multiplicacion(){
+    let elemento_numero1 = document.getElementById("primer_numero");
+    let elemento_numero2 = document.getElementById("segundo_numero");
+    let elemento_texto = document.getElementById("texto_resultado");
+    let elemento_multiplicacion = multiplicar(elemento_numero1.value, elemento_numero2.value);
+
+    elemento_texto.textContent  = elemento_multiplicacion;
+}
+function division(numero_1, numero_2){
+    resultado = +numero_1 / +numero_2;
+    return resultado
+}
+function dividir(){
+    let elemento_numero1 = document.getElementById("primer_numero");
+    let elemento_numero2 = document.getElementById("segundo_numero");
+    let elemento_texto = document.getElementById("texto_resultado");
+    let elemento_dividir = division(elemento_numero1.value, elemento_numero2.value);
+
+    elemento_texto.textContent  = elemento_dividir;
+}
+function raizde(numero_1){
+    return Math.SQRT2
+}
+function raiz(){
+    let elemento_numero1 = document.getElementById("primer_numero");
+    let elemento_texto = document.getElementById("texto_resultado");
+    let elemento_raiz = raizde(elemento_numero1.value);
+
+    elemento_texto.textContent  = elemento_raiz;
+}
+
+function potenciar(numero_1, numero_2){
+    return Math.pow(numero_1, numero_2)
+}
+function potencia(){
+    let elemento_numero1 = document.getElementById("primer_numero");
+    let elemento_numero2 = document.getElementById("segundo_numero");
+    let elemento_texto = document.getElementById("texto_resultado");
+    let elemento_potencia = potenciar(elemento_numero1.value, elemento_numero2.value);
+
+    elemento_texto.textContent  = elemento_potencia;
+}
+
+function diametrar(numero_1){
+    return Math.PI * numero_1
+}
+function diametro(){
+    let elemento_numero1 = document.getElementById("primer_numero");
+    let elemento_texto = document.getElementById("texto_resultado");
+    let elemento_diametro = diametrar(elemento_numero1.value);
+
+    elemento_texto.textContent  = elemento_diametro;
+}
+
+function randomizar(numero_1, numero_2){
+    return Math.random (numero_1, numero_2)
+}
+function random(){
+    let elemento_numero1 = document.getElementById("primer_numero");
+    let elemento_numero2 = document.getElementById("segundo_numero")
+    let elemento_ram = randomizar(numero_1.value, numero_2.value);
+    let elemento_texto = document.getElementById("texto_resultado");
+
+    elemento_texto.textContent  = elemento_random;
+}
+
+    </script>
+</body>
+</html>
